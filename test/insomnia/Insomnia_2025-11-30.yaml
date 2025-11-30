@@ -1,0 +1,236 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: My first collection
+meta:
+  id: wrk_e06e05ed36964c1a9f1bd15f705509bc
+  created: 1764513454834
+  modified: 1764513454834
+  description: ""
+collection:
+  - url: http://localhost:3010/user/create
+    name: POST /user/create
+    meta:
+      id: req_4b9b69ca397043eead2df1d7b0f75158
+      created: 1764513455248
+      modified: 1764514559855
+      isPrivate: false
+      description: ""
+      sortKey: -1764513455248
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "test@example4.com",
+          "name": {
+            "first": "Test",
+            "last": "User"
+          }
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+      - name: X-User-Identity
+        value: test-user-1
+        description: ""
+        disabled: false
+      - name: X-User-Profile
+        value: Authorities
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3010/shoppingList/create
+    name: POST /shoppingList/create
+    meta:
+      id: req_1893581d71f847cea80626eebbad4428
+      created: 1764513837053
+      modified: 1764513948349
+      isPrivate: false
+      description: ""
+      sortKey: -1764513837053
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Nákup na víkend",
+          "description": "Potraviny na sobotu"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+      - name: X-User-Identity
+        value: test-user-1
+        description: ""
+        disabled: false
+      - name: X-User-Profile
+        value: User
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3010/shoppingList/get?id=692c5b08796c604a5c848ce2
+    name: GET /shoppingList/get
+    meta:
+      id: req_0a9cacd10ad9494eb4e008b723da4fc4
+      created: 1764513975881
+      modified: 1764514588335
+      isPrivate: false
+      description: ""
+      sortKey: -1764513975881
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+      - name: X-User-Identity
+        value: test-user-1
+        description: ""
+        disabled: false
+      - name: X-User-Profile
+        value: User
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3010/shoppingList/listMy?pageIndex=0&pageSize=50
+    name: GET /shoppingList/listMy
+    meta:
+      id: req_112bc7269b844cb78eb6834d97e60d3e
+      created: 1764514191459
+      modified: 1764514247653
+      isPrivate: false
+      description: ""
+      sortKey: -1764514191459
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+      - name: X-User-Identity
+        value: test-user-1
+        description: ""
+        disabled: false
+      - name: X-User-Profile
+        value: User
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3010/shoppingList/update
+    name: POST /shoppingList/update
+    meta:
+      id: req_0cdf15cad2294159a40c47982da4e6f9
+      created: 1764514254311
+      modified: 1764514384907
+      isPrivate: false
+      description: ""
+      sortKey: -1764514254311
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "id": "692c58a0796c604a5c848cc8",
+          "title": "Upravený nákup"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: X-User-Identity
+        value: test-user-1
+        description: ""
+        disabled: false
+      - name: X-User-Profile
+        value: User
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3010/shoppingList/delete
+    name: POST /shoppingList/delete
+    meta:
+      id: req_0f19c9800a3941f6a1dd46243e0415b1
+      created: 1764514405360
+      modified: 1764514503696
+      isPrivate: false
+      description: ""
+      sortKey: -1764514405360
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "id": "692c58a0796c604a5c848cc8"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: X-User-Identity
+        value: test-user-1
+        description: ""
+        disabled: false
+      - name: X-User-Profile
+        value: User
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_94c234cb351b61621ea5c9785e74a058a99899a8
+    created: 1764513455015
+    modified: 1764513455015
+environments:
+  name: Base Environment
+  meta:
+    id: env_94c234cb351b61621ea5c9785e74a058a99899a8
+    created: 1764513454913
+    modified: 1764513454913
+    isPrivate: false

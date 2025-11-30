@@ -22,8 +22,20 @@ const shoppingListListMySchema = Joi.object({
     pageSize: Joi.number().integer().min(1).max(100).default(50)
 });
 
+const shoppingListDeleteSchema = Joi.object({
+    id: Joi.string().required()
+});
+
+const shoppingListUpdateSchema = Joi.object({
+    id: Joi.string().required(),
+    title: Joi.string().min(1).max(200).optional(),
+    description: Joi.string().max(1000).allow("", null).optional()
+}).or("title", "description");
+
 module.exports = {
     shoppingListCreateSchema,
     shoppingListGetSchema,
-    shoppingListListMySchema
+    shoppingListListMySchema,
+    shoppingListDeleteSchema,
+    shoppingListUpdateSchema
 };

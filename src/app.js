@@ -27,6 +27,8 @@ app.get("/user/get", authorize(["Authorities","User","Viewer"]), userController.
 app.post("/shoppingList/create", authorize(["Authorities","User"]), shoppingListController.createShoppingList);
 app.get("/shoppingList/get", authorize(["Authorities","User","Viewer"]), shoppingListController.getShoppingList);
 app.get("/shoppingList/listMy", authorize(["Authorities","User","Viewer"]), shoppingListController.listMyShoppingLists);
+app.post("/shoppingList/delete", authorize(["Authorities", "User"]), shoppingListController.deleteShoppingList);
+app.post("/shoppingList/update", authorize(["Authorities", "User"]), shoppingListController.updateShoppingList);
 
 // MEMBERSHIPS
 app.post("/membership/addUser", authorize(["Authorities","User"]), membershipController.addUserToList);
