@@ -1,20 +1,19 @@
 const mongoose = require("mongoose");
 
-const MONGODB_URI =
-    process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/shopping_list_hw";
+const DEFAULT_URI = "mongodb://127.0.0.1:27017/shopping_list_hw";
 
-async function connect() {
+async function connect(uri = process.env.MONGODB_URI || DEFAULT_URI) {
     try {
-        await mongoose.connect(MONGODB_URI, {
-            serverSelectionTimeoutMS: 5000
-        });
-        console.log("✅ Connected to MongoDB");
+        await mongoose.connect(uri, { serverSelectionTimeoutMS: 5000 });
+        return mongoose;
     } catch (err) {
         console.error("❌ MongoDB connection error:", err);
-        process.exit(1);
+        throw err;
     }
 }
 
-connect();
+async function disconnect() {
+    await mongoose.disconnect();
+}
 
-module.exports = mongoose;
+module.exports = { mongoose, connect, disconnect };
